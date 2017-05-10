@@ -10,25 +10,25 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (error, db) =>{
   }
   console.log('Now connected to mongodb');
 
-  db.collection('Users')
-  .find()
-  .count()
-  .then((count) => {
-    console.log(`Users Count ${count}`);
-  }, (error) => {
-    console.log(error);
-  });
-
-
-  db.collection('Users')
-  .find({completed: false})
-  .toArray()
-  .then((docs) => {
-    console.log('Users ');
-    console.log(JSON.stringify(docs, undefined, 2));
-  }, (error) => {
-    console.log(error);
-  });
+  // db.collection('Users')
+  // .find()
+  // .count()
+  // .then((count) => {
+  //   console.log(`Users Count ${count}`);
+  // }, (error) => {
+  //   console.log(error);
+  // });
+  //
+  //
+  // db.collection('Users')
+  // .find({completed: false})
+  // .toArray()
+  // .then((docs) => {
+  //   console.log('Users ');
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (error) => {
+  //   console.log(error);
+  // });
 
 
 //to use ObjectIDs, we can do this
@@ -45,7 +45,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (error, db) =>{
 //   console.log(error);
 // });
 
-
+  // 
   // db.collection('Todos').insertOne({
   //   text: 'Some kind of text',
   //   completed: false
