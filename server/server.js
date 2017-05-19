@@ -1,4 +1,4 @@
-// require('./config/config');
+require('./config/config');
 
 const _ = require('lodash');
 const express = require('express');
@@ -96,7 +96,8 @@ app.patch('/todos/:id', authenticate, (req, res) => {
     body.completedAt = null;
   }
 
-  Todo.findOneAndUpdate({_id: id, _creator: req.user._id}, {$set: body}, {new: true}).then((todo) => {
+  Todo.findOneAndUpdate({_id: id, _creator: req.user._id}, {$set: body}, {new: true})
+  .then((todo) => {
     if (!todo) {
       return res.status(404).send();
     }
